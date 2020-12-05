@@ -1,0 +1,49 @@
+body{   
+    background: url(images/background.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container{
+display: flex;
+flex-direction: column;
+align-items: center;
+height: 100%;
+}
+.cookie{
+    display: flex;
+    width: 20%;
+   margin: 20% auto 0px auto; 
+}
+.add{
+width: 10%;
+height: 20%;
+display: flex;
+justify-content: center;
+text-align: center;
+padding: 20px 0px 20px 0px;
+border-radius: 20px;
+}
+#p{
+color:white;
+display: flex;
+justify-content: center;
+font-size: 100%;
+}
+
+#mpt{
+    color:white;
+}
+.m{
+margin-top: 20px;
+margin-bottom: 20px;
+}
+.add:hover{
+background-color: darkgray;
+}
+
+
+
+
