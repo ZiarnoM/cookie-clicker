@@ -13,12 +13,12 @@ window.setInterval(function(){
 // add cookie
 function add(){
     sum+= cpt;
-    // blockCreate();
+   // blockCreate();
     textUpdate();
 }
 
 // pop-up divs - TODO
-/* function blockCreate(){
+ /* function blockCreate(){
     var posX = window.event.clientX;
     var posY = window.event.clientY;
     let div = document.createElement('div');
@@ -28,10 +28,9 @@ function add(){
     document.body.appendChild(div);
     document.querySelector('.proba').style.top= posY +"px";
     document.querySelector('.proba').style.left= posX + "px";
-    /* document.createElement("div").className = 'animacja';
-    document.querySelector(".animacja").innerHTML = 'huj'; 
-} 
-*/
+     document.createElement("div").className = 'animacja';
+} */ 
+
 
 // upgrade earning by 1 cpt
 function upgrade1(){
@@ -76,7 +75,41 @@ function textUpdate(){
     /* document.querySelector(".komunikat").innerHTML = "Pozycja myszki <br> X: " + posX +"<br> Y: " + posY; */
 }
 
+
+
+//  scrolling disable
+{
 function perSecond(){
     sum += cps;
     textUpdate();
+}
+
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+// modern Chrome requires { passive: false } when adding event
+var supportsPassive = false;
+try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+        get: function () { supportsPassive = true; }
+    }));
+} catch (e) { }
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+
 }

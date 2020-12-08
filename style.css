@@ -16,6 +16,7 @@ main{
   height: 100%;
 }
 .cookie {
+  margin-top: 17vh;
   width: 40%;
 }
 .cookie:hover{
@@ -26,11 +27,14 @@ main{
 }
 .add {
   width: 9vw;
-  height: 7vh;
+  height: 8vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 2vh;
+  font-size: 2vh;
+  border: none;
+  margin-left: 2vw;
 }
 p{
   color: white;
