@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Clicker</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="textUpdate()">
     
-<div class="container">
+<main>
 
-    <img class="cookie m" style="margin-top: 200px;" onclick=add() src="images/cookie.png" alt="">
+    <img class="cookie" style="margin-top: 200px;" onclick=add() src="images/cookie.png" draggable="false">
+    <p class="total">0 cookies</p>
+    <p class="mpt">1 cpt</p>
+    
+    <p class="ilosc"></p>
+    <div class="buttons">
+        <button onclick=upgrade1() class="add upgrade1">+1 <br> koszt 10 monet</button>
+        <button onclick=upgrade10() class="add upgrade10">+10 <br> koszt 10 monet</button>
+    </div>
 
-   
-    <p id="p" class="m">0 points</p>
-    <p id="mpt" class="m">1 ppt</p>
+    <!-- <p class="komunikat">dsfdsfds</p> -->
 
-    <button id="upgrade" onclick=upgrade() class="add m">+1 <br> koszt 10 monet</button>
-</div>
+</main>
 </body>
 </html>
